@@ -15,6 +15,11 @@ $(window).load(function() {
         slideshow: false,
         animationLoop: false
     });
+    $('#section-g .flexslider').flexslider({
+        animation: 'slide',
+        slideshow: false,
+        animationLoop: false
+    });
     
 
 });
