@@ -297,7 +297,9 @@
                                     <div class="col-md-6">
                                         <h4 class="text-right text-left-sm caps">Team Memebers</h4>
                                         <p class="text-right text-left-sm">
-                                        Dimos and Xiaodong
+                                        DimosKritos Stamatakis
+                                        
+                                        Xiaodong Qu
                                         </p>
                                     </div>
                                     <div class="col-md-6">
@@ -306,9 +308,9 @@
                                 </div>
                                 <div class="row padding-md">
                                     <div class="col-md-6">
-                                        <h4 class="text-right text-left-sm caps">MIT Cognet Website</h4>
+                                        <h4 class="text-right text-left-sm caps">Introduction</h4>
                                         <p class="text-right text-left-sm">
-                                        Transferring the website to application
+                                        Our project is an Android app for the cognet.mit.edu website. Our app can get the secured data of books, journals and reference works from the website, the end users can perform actions like login/logout, view content list, search, scroll down,view content details and pdf, and add to favorite etc. We are using Agile Scrum to guide our development work. The website have development site, staging site, and live site, our development work is based on staging2 website, and our code and communication is saved in Bitbucket. We are trying to apply what we learned from this class to a live project with a lot of content and users. Also we learned how the data can be pass along between a website and an Android app.
                                         </p>
                                     </div>
                                     <div class="col-md-6">
@@ -319,7 +321,7 @@
                                 <div class="row">
                                     <div class="col-md-12 padding-lg">
                                         <h2 class="text-center caps">
-                                            Implementaion of Application
+                                            Scope of Work
                                         </h2>
                                     </div>
                                 </div>
@@ -329,17 +331,17 @@
                                         <img src="assets/img/portfolio/bookping/brandeis.png" alt="">
                                             </div>
                                     <div class="col-md-6">
-                                        <h4 class="text-left caps">User Interface</h4>
+                                        <h4 class="text-left caps">User Authentication</h4>
                                         <p class="text-left">
-                                        Namho created such as listviews
-                                        </p>
+                                        In order for users to access the PDF files from CogNet they must either have an account, or connect through a subscribed network. Brandeis has subscribed to CogNet, so anyone with a Brandeis IP address can access the PDF files. Our user authentication functions are using RESTful API, and perform HTTP POST requests with the apache HTTP client library. For example, a user can login by sending a POST request to the CogNet server in the appropriate URL and adding the username and password as HTTP headers. We then analyze the response from the server and if the login is successful we extract the session ID and session name, which both form the session cookie. The session cookie is stored in the Main Activity and is passed to the child activities so that to use it when viewing a PDF is required.
+                                        We automatically log out the user’s account when he terminates the application, by adding the log out function call within the onDestroy() function. The process of logging out consists of a HTTP POST request and the cookie as a header.                                        </p>
                                     </div>
                                 </div>
                                 <div class="row padding-md">
                                     <div class="col-md-6">
-                                        <h4 class="text-right caps">Server</h4>
+                                        <h4 class="text-right caps">Getting Data from the Server</h4>
                                         <p class="text-right">
-                                        Xiaodong created the server through durpals
+                                        We enabled the RSS feed in the CogNet server through the drupal admin panel. This means someone can ask for a page and get a response in XML format, instead of HTML. This is very useful for our application, since it will only have to parse XML and extract the required tags, instead of analyzing the entire HMTL, finding out what is required and discarding the rest. We perform HTTP GET requests to get the XML with information about books, journals, etc.
                                         </p>
                                     </div>
                                     <div class="col-md-6">
@@ -351,17 +353,17 @@
                                         <img src="assets/img/portfolio/bookping/brandeis.png" alt="">
                                             </div>
                                     <div class="col-md-6">
-                                        <h4 class="text-left caps">Login</h4>
+                                        <h4 class="text-left caps">User Interface and Item Description Activity </h4>
                                         <p class="text-left">
-                                        Dimos created by using REST API
+                                        This Activity shows description for a selected item from the ListView, including the title, author, publication date, image, description text and link to the PDF. We added a Click Listener in the ListView, where a new description Activity will be started when an item is selected. We also pass the information we got from the RSS feed to the description activity encapsulated in an Intent. At this point we can set the text of the TextViews according to the Intent’s data, and also retrieve the image from the server and add it to an ImageView. We also have the ISBN of the book, from which we can construct the PDF URL.
                                         </p>
                                     </div>
                                 </div>
                                 <div class="row padding-md">
                                     <div class="col-md-6">
-                                        <h4 class="text-right caps">Database</h4>
+                                        <h4 class="text-right caps">Database ("Add-to-Favorite" fuction)</h4>
                                         <p class="text-right">
-                                        Add favorite function
+                                        We support an ”Add-to-Favorite” function, which will allow the users to save the books they find interesting in a list and access them anytime. This list extends the ItemListActivity to inherit the common functionality, with the difference that it accesses the contents of the ViewList from the SQLite database. Thus, the favorites list will remain even if the application exits. We check whether an item already exists in the Database and if so, we make the ”Add Favorite” button ”Delete Favorite”, which deletes the item from the Database.The ”Add-to-Favorite” does not require login and will be stored locally in the device, since the login is only for the CogNet server authentication. The favorites list is also useful for someone who does not have an account in CogNet, but can access the PDFs through a subscribed network, ie. Brandeis. If he is not at the Brandeis network, he can add the books he finds interesting in the favorites list and view the PDFs later when he connects to the Brandeis network.
                                         </p>
                                     </div>
                                     <div class="col-md-6">
@@ -373,9 +375,13 @@
                                         <img src="assets/img/portfolio/bookping/brandeis.png" alt="">
                                             </div>
                                     <div class="col-md-6">
-                                        <h4 class="text-left caps">XML</h4>
+                                        <h4 class="text-left caps">Viewing PDF files</h4>
                                         <p class="text-left">
-                                        Data retrieved from XML
+                                        For this task, we want to get a PDF file from CogNet server and display it on the device. As we said before, we store the ISBN of the selected book and from this we can construct the PDF URL.
+                                        Initially, we thought of using a WebView with the Google Docs plugin and the URL of the PDF, as https://docs.google.com/gview?embedded=true&url=cognet/pdfURL.pdf The initial request will first go to the Google Docs server and the Google Docs server will redirect it to the CogNet server. The problem is that the Google Docs server does not forward the cookie to the CogNet server, so the request cannot be authenticated. Thus, our alternative approach is to download the PDF on the device and then start an intent to display it. We did it by storing the PDF in a file on the device through a byte[] buffer. Then, we start an intent for viewing the PDF by providing the PDF URL and its type, as:
+                                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                                        intent.setDataAndType(pdfPath, "application/pdf");
+                                        
                                         </p>
                                     </div>
                                 </div>
