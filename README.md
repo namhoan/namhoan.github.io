@@ -1,2 +1,2 @@
-# namhoan.github.io
+# namhoan.com
 GitHub Page
