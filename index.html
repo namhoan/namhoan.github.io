@@ -379,7 +379,10 @@
                                         Initially, we thought of using a WebView with the Google Docs plugin and the URL of the PDF, as https://docs.google.com/gview?embedded=true&url=cognet/pdfURL.pdf The initial request will first go to the Google Docs server and the Google Docs server will redirect it to the CogNet server. The problem is that the Google Docs server does not forward the cookie to the CogNet server, so the request cannot be authenticated. Thus, our alternative approach is to download the PDF on the device and then start an intent to display it. We did it by storing the PDF in a file on the device through a byte[] buffer. Then, we start an intent for viewing the PDF by providing the PDF URL and its type, as:
                                         Intent intent = new Intent(Intent.ACTION_VIEW);
                                         intent.setDataAndType(pdfPath, "application/pdf");
-                                        
+                                        <br>
+                                        <br>
+                                        <br>
+                                        Full CODE is available in github.com/namhoan/MIT-Cognet_MobileApplication_Android
                                         </p>
                                     </div>
                                 </div>
@@ -404,19 +407,11 @@
                             <div class="container">
                                 <div class="row padding-md">
                                     <div class="col-md-12">
-                                        <h2 class="text-center caps">Softwares and application</h2>
+                                        <h2 class="text-center caps">Softwares </h2>
                                         <img src="assets/img/portfolio/orfa/matlab.png" alt="" style="display: inline; height: 75px;">
                                                 <img src="assets/img/portfolio/orfa/python.png" alt="" style="display: inline; height: 75px;">
                                                         <img src="assets/img/portfolio/orfa/excel.png" alt="" style="display: inline; height: 75px;">
                                                         </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-md-12 padding-lg">
-                                        <h2 class="text-center caps">
-                                            It’s not about ideas. It’s about making ideas happen.
-                                        </h2>
-                                    </div>
                                 </div>
                                 <hr>
                                 <div class="row padding-md">
@@ -427,17 +422,17 @@
                                         </p>
                                     </div>
                                     <div class="col-md-6">
-                                        <img src="assets/img/portfolio/bookping/brandeis.png" alt="">
+                                        <img src="assets/img/teamwork.png" alt="">
                                             </div>
                                 </div>
                                 <div class="row padding-md">
                                     <div class="col-md-6">
-                                        <img src="assets/img/portfolio/bookping/brandeis.png" alt="">
+                                        <img src="assets/img/ai.png" alt="">
                                             </div>
                                     <div class="col-md-6">
                                         <h4 class="text-left caps">Progress</h4>
                                         <p class="text-left">
-                                        We had two progress
+                                        We had four methods that we tried for our final project. First, we generated the code for random results with Java. After the random results, we used serious computations in Matlab, which are labeled “PROGRESS 1”. After this we tried to apply a neural network to our code. However, we were unable to make it work. Finally, we wrote a better serious computational code in Matlab. In this method we used a part of the theory from the article about deep learning. That article was called “Deep learning for answer sentence selection.” The second serious computational code is labeled “PROGESS 2”.
                                         </p>
                                     </div>
                                 </div>
@@ -445,11 +440,18 @@
                                     <div class="col-md-6">
                                         <h4 class="text-right text-left-sm caps">Results</h4>
                                         <p class="text-right text-left-sm">
-                                        Random result, Progress 1: bad, Progress 2: better
+                                        Our results from random guessing were 0.25500.
+                                        <br>
+                                        Our results from the first serious computation, PROGRESS 1, were 0.22500.
+                                        <br>
+                                        Finally, our results from the second serious computation, PROGRESS 2, were 0.24000.
+                                        <br>
+                                        <br>
+                                        CODE is available in github/namhoan/AI_Final_Project_Matlab
                                         </p>
                                     </div>
                                     <div class="col-md-6">
-                                        <img src="assets/img/portfolio/bookping/brandeis.png" alt="">
+                                        <img src="assets/img/airesult.png" alt="">
                                             </div>
                                 </div>
                             </div>
@@ -467,7 +469,7 @@
                         <div class="modal-header dark header-img-bg">
                             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                             <h3 class="modal-title text-center title caps" id="project-2Label">Seeking For Dream</h3>
-                            <h4 class="sub-title">Creating awesome maze game in 3D Animation and Gmae course (Brandeis COSI 65a)</h4>
+                            <h4 class="sub-title">Developer</h4>
                         </div>
                         <div class="modal-body">
                             <div class="container">
@@ -475,11 +477,14 @@
                                     <div class="col-md-6">
                                         <h4 class="text-right text-left-sm caps">Maze Game</h4>
                                         <p class="text-right text-left-sm">
-                                        I was developing the game and this game is awesome
+                                        I created awesome maze game by using Blender engine. The characters are made by MakeHuman SW and character dynamics are created by coding with python. The main character is able to move around the maze and its mission is to find a right path. He or she is able to shoot an object and also jump around. There are three stages to complete the mission but time limit for each stage.
+                                        <br>
+                                        <br>
+                                        CODE is available in github.com/namhoan/SeekingForDream_Game_Blender
                                         </p>
                                     </div>
                                     <div class="col-md-6">
-                                        <img src="assets/img/portfolio/bookping/brandeis.png" alt="">
+                                        <img src="assets/img/mazegame.png" alt="">
                                             </div>
                                 </div>
                                 <hr>
